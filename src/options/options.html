@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SlashKeys — Snippets</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="../../assets/icons/icon32.png" alt="" onerror="this.style.display='none'">
+      <h1>SlashKeys</h1>
+      <span class="tagline">type <code>\shortcut</code>, get your text</span>
+    </div>
+    <div class="header-actions">
+      <span id="pro-badge" class="badge hidden">PRO</span>
+      <button id="upgrade-btn" class="btn btn-accent hidden">Upgrade to Pro</button>
+      <label class="switch" title="Turn all expansion on/off">
+        <input type="checkbox" id="global-enabled">
+        <span class="slider"></span>
+        <span class="switch-label">Enabled</span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search snippets…">
+      <span id="count" class="count"></span>
+      <div class="toolbar-right">
+        <button id="import-btn" class="btn btn-ghost">Import</button>
+        <button id="export-btn" class="btn btn-ghost">Export</button>
+        <button id="add-btn" class="btn btn-primary">+ Add snippet</button>
+      </div>
+    </div>
+
+    <div id="limit-banner" class="banner hidden">
+      You've reached the free limit of <b>20 snippets</b>.
+      <button id="limit-upgrade" class="btn btn-accent btn-sm">Go unlimited with Pro</button>
+    </div>
+
+    <table id="snippet-table">
+      <thead>
+        <tr>
+          <th style="width:140px">Trigger</th>
+          <th style="width:220px">Description</th>
+          <th>Expands to</th>
+          <th style="width:130px"></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="empty" class="empty hidden">
+      No snippets yet. Click <b>+ Add snippet</b> to create your first one, then type
+      <code>\yourtrigger</code> in any text field on any website.
+    </div>
+
+    <section class="settings">
+      <h2>Settings</h2>
+      <div class="setting-row">
+        <div>
+          <b>Disabled sites</b>
+          <p>Expansion is turned off on these sites (manage from the toolbar popup).</p>
+        </div>
+        <div id="disabled-sites" class="chips"></div>
+      </div>
+      <div class="setting-row">
+        <div>
+          <b>Clipboard placeholder</b>
+          <p>Allow <code>{clipboard}</code> to paste your current clipboard into snippets. <span class="pro-tag">Pro</span></p>
+        </div>
+        <button id="clipboard-perm" class="btn btn-ghost">Grant clipboard access</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add / Edit modal -->
+  <div id="modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title">Add snippet</h2>
+      <label>Trigger
+        <div class="trigger-input">
+          <span class="prefix">\</span>
+          <input type="text" id="f-trigger" placeholder="greeting" autocomplete="off" spellcheck="false">
+        </div>
+        <span class="hint">You'll type <code>\</code> + this to expand. Letters, numbers, dashes — no spaces.</span>
+      </label>
+      <label>Description <span class="hint-inline">(optional)</span>
+        <input type="text" id="f-description" placeholder="Long greeting for tickets">
+      </label>
+      <label>Expands to
+        <textarea id="f-content" rows="7" placeholder="Hi there,&#10;&#10;Thanks for reaching out!"></textarea>
+      </label>
+      <div class="placeholder-bar">
+        <span>Insert:</span>
+        <button class="chip-btn" data-ph="{date}">{date}</button>
+        <button class="chip-btn" data-ph="{time}">{time}</button>
+        <button class="chip-btn" data-ph="{date:YYYY-MM-DD}">{date:custom}</button>
+        <button class="chip-btn" data-ph="{clipboard}">{clipboard}</button>
+        <button class="chip-btn" data-ph="{cursor}">{cursor}</button>
+        <span class="pro-tag" id="ph-pro-tag">Pro</span>
+      </div>
+      <div id="f-preview" class="preview hidden"></div>
+      <div id="f-error" class="error hidden"></div>
+      <div class="modal-actions">
+        <button id="f-cancel" class="btn btn-ghost">Cancel</button>
+        <button id="f-save" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="import-file" accept=".json,.txt,.csv" class="hidden">
+
+  <script src="../lib/extpay.js"></script>
+  <script src="../expander.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
