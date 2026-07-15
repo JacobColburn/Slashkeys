@@ -36,9 +36,12 @@ function renderList() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  chrome.storage.local.get({ snippets: [], settings: {} }, data => {
+  chrome.storage.local.get({ snippets: [], settings: {}, pro: false }, data => {
     snippets = data.snippets;
-    settings = Object.assign({ enabled: true, disabledSites: [] }, data.settings);
+    settings = Object.assign({ enabled: true, disabledSites: [], theme: 'dark' }, data.settings);
+    const freeThemes = ['dark', 'light'];
+    document.documentElement.dataset.theme =
+      (data.pro || freeThemes.includes(settings.theme)) ? settings.theme : 'dark';
     $('global-enabled').checked = settings.enabled;
     renderList();
 

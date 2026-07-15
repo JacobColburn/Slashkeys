@@ -3,6 +3,16 @@
 const FREE_SNIPPET_LIMIT = 20;
 const EXTPAY_ID = 'slashkeys';
 
+// Swatch color = that theme's --bg-raised / --accent pair (keep in sync with themes.css)
+const THEMES = [
+  { id: 'dark', name: 'Dark', pro: false, bg: '#1c1f28', fg: '#6c9bff' },
+  { id: 'light', name: 'Light', pro: false, bg: '#ffffff', fg: '#3b76f0' },
+  { id: 'midnight', name: 'Midnight', pro: true, bg: '#0c0f16', fg: '#4f8cff' },
+  { id: 'forest', name: 'Forest', pro: true, bg: '#17221b', fg: '#5fbf8a' },
+  { id: 'rose', name: 'Rosé', pro: true, bg: '#fdf9f7', fg: '#c96a75' },
+  { id: 'amoled', name: 'AMOLED', pro: true, bg: '#000000', fg: '#7aaaff' }
+];
+
 let snippets = [];
 let settings = { enabled: true, disabledSites: [] };
 let pro = false;
@@ -20,7 +30,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g,
 function load() {
   chrome.storage.local.get({ snippets: [], settings: {}, pro: false }, data => {
     snippets = data.snippets;
-    settings = Object.assign({ enabled: true, disabledSites: [] }, data.settings);
+    settings = Object.assign({ enabled: true, disabledSites: [], theme: 'dark' }, data.settings);
     pro = !!data.pro;
     renderAll();
   });
@@ -38,6 +48,36 @@ function renderAll() {
   $('limit-banner').classList.toggle('hidden', pro || snippets.length < FREE_SNIPPET_LIMIT);
   renderTable();
   renderDisabledSites();
+  renderThemePicker();
+}
+
+// ── Themes ────────────────────────────────────────────────────────────────────
+
+function applyTheme() {
+  const theme = THEMES.find(t => t.id === settings.theme && (pro || !t.pro));
+  document.documentElement.dataset.theme = theme ? theme.id : 'dark';
+}
+
+function renderThemePicker() {
+  applyTheme();
+  const el = $('theme-picker');
+  el.innerHTML = THEMES.map(t => `
+    <button class="theme-swatch ${settings.theme === t.id ? 'active' : ''}"
+            data-theme-id="${t.id}" title="${t.name}${t.pro && !pro ? ' (Pro)' : ''}">
+      ${t.pro && !pro ? '<span class="lock">🔒</span>' : ''}
+      <span class="dot" style="background:linear-gradient(135deg, ${t.bg} 55%, ${t.fg} 55%)"></span>
+      ${t.name}
+    </button>`).join('');
+  el.querySelectorAll('.theme-swatch').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const t = THEMES.find(x => x.id === btn.dataset.themeId);
+      if (t.pro && !pro) {
+        requireProFor(`The ${t.name} theme`);
+        return;
+      }
+      settings.theme = t.id;
+      persist(); renderThemePicker();
+    }));
 }
 
 function renderTable() {
