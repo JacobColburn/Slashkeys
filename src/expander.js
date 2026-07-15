@@ -109,3 +109,5 @@ const SlashKeysExpander = (() => {
 })();
 
 if (typeof module !== 'undefined' && module.exports) module.exports = SlashKeysExpander;
+// Top-level const doesn't create a global property — export explicitly for content.js
+else globalThis.SlashKeysExpander = SlashKeysExpander;
