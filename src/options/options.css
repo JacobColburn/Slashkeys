@@ -6,7 +6,21 @@ body {
   color: var(--text);
   font: 14px/1.55 var(--font-ui);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+header, .setting-row, #snippet-table, .modal, .theme-swatch, td, th, .btn {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
 
 /* ── Header ──────────────────────────────────────────────────────────────── */
 
@@ -181,6 +195,14 @@ tbody tr:hover .row-actions { opacity: 1; }
   padding: 56px 20px; border: 1.5px dashed var(--border); border-radius: var(--radius);
   margin-top: 12px; font-size: 14.5px;
 }
+.empty::before {
+  content: '\\';
+  display: block;
+  font: 400 44px/1 var(--font-mono);
+  color: var(--accent);
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
 
 /* ── Settings ────────────────────────────────────────────────────────────── */
 
@@ -245,6 +267,11 @@ tbody tr:hover .row-actions { opacity: 1; }
   border-radius: 14px; padding: 24px 26px; width: 560px; max-width: 92vw;
   max-height: 90vh; overflow-y: auto;
   box-shadow: var(--shadow);
+  animation: modal-in 0.16s ease-out;
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to { opacity: 1; transform: none; }
 }
 .modal h2 { margin: 0 0 18px; font-size: 17px; font-weight: 650; }
 .modal label { display: block; margin-bottom: 15px; font-weight: 600; font-size: 13px; }

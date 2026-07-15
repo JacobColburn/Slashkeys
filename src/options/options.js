@@ -5,12 +5,12 @@ const EXTPAY_ID = 'slashkeys';
 
 // Swatch color = that theme's --bg-raised / --accent pair (keep in sync with themes.css)
 const THEMES = [
-  { id: 'dark', name: 'Dark', pro: false, bg: '#1c1f28', fg: '#6c9bff' },
+  { id: 'dark', name: 'Dark', pro: false, bg: '#1f2023', fg: '#4fb8a5' },
   { id: 'light', name: 'Light', pro: false, bg: '#ffffff', fg: '#3b76f0' },
-  { id: 'midnight', name: 'Midnight', pro: true, bg: '#0c0f16', fg: '#4f8cff' },
+  { id: 'midnight', name: 'Midnight', pro: true, bg: '#0a0e1a', fg: '#7c8cff' },
   { id: 'forest', name: 'Forest', pro: true, bg: '#17221b', fg: '#5fbf8a' },
   { id: 'rose', name: 'Rosé', pro: true, bg: '#fdf9f7', fg: '#c96a75' },
-  { id: 'amoled', name: 'AMOLED', pro: true, bg: '#000000', fg: '#7aaaff' }
+  { id: 'amoled', name: 'AMOLED', pro: true, bg: '#000000', fg: '#ececec' }
 ];
 
 let snippets = [];
