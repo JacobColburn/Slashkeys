@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>large promo tile</title>
+  <style>
+    body {
+      margin: 0; width: 1400px; height: 560px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; gap: 72px;
+      background: radial-gradient(1100px 700px at 20% 10%, #24322e 0%, #17181a 55%, #0e0f11 100%);
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+    .left { display: flex; flex-direction: column; gap: 18px; max-width: 560px; }
+    .brand { display: flex; align-items: center; gap: 18px; }
+    .mark {
+      font: 400 54px/1 ui-monospace, "Cascadia Code", Consolas, monospace;
+      color: #74cfbe; background: #1f2023; border: 1px solid #333539;
+      border-radius: 20px; width: 88px; height: 88px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+    }
+    h1 { color: #e7e5e1; font-size: 46px; margin: 0; }
+    .sub { color: #a3a099; font-size: 22px; margin: 0; line-height: 1.5; }
+    .sub code {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      color: #74cfbe; background: rgba(79, 184, 165, 0.12);
+      padding: 2px 10px; border-radius: 8px;
+    }
+    .pills { display: flex; gap: 10px; margin-top: 4px; }
+    .pill {
+      color: #a3a099; border: 1px solid #333539; border-radius: 999px;
+      padding: 6px 16px; font-size: 15px; background: rgba(31, 32, 35, 0.6);
+    }
+    .demo {
+      background: #1f2023; border: 1px solid #333539; border-radius: 16px;
+      padding: 30px 34px; width: 460px;
+      font: 17px/1.7 ui-monospace, "Cascadia Code", Consolas, monospace;
+      color: #a3a099; box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+    }
+    .typed { color: #74cfbe; }
+    .arrow { color: #dcae54; }
+    .out { color: #e7e5e1; }
+    .caret { display: inline-block; width: 9px; height: 19px; background: #74cfbe; vertical-align: -3px; }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand">
+      <div class="mark">\</div>
+      <h1>SlashKeys</h1>
+    </div>
+    <p class="sub">Type <code>\shortcut</code> — get your full text.<br>The text expander that never phones home.</p>
+    <div class="pills">
+      <span class="pill">No account</span>
+      <span class="pill">100% local</span>
+      <span class="pill">Free</span>
+    </div>
+  </div>
+  <div class="demo">
+    <div><span class="typed">\greeting</span> <span class="arrow">→</span></div>
+    <div class="out">Hi there,<br><br>Thanks for reaching out! I'd be happy to help you with this.<br><br>Best regards,<span class="caret"></span></div>
+  </div>
+</body>
+</html>
