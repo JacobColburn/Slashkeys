@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../src/themes.css">
+  <link rel="stylesheet" href="../../src/popup/popup.css">
+  <style>body { width: auto; }</style>
+</head>
+<body>
+  <header>
+    <span class="brand">SlashKeys</span>
+    <label class="switch" title="Turn all expansion on/off">
+      <input type="checkbox" id="global-enabled">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <label class="site-row" id="site-row">
+    <input type="checkbox" id="site-enabled">
+    <span>Enabled on <b id="site-host">this site</b></span>
+  </label>
+
+  <input type="search" id="search" placeholder="Search snippets…" autofocus>
+
+  <ul id="list"></ul>
+  <div id="empty" class="empty hidden">No snippets yet.</div>
+
+  <footer>
+    <span id="count"></span>
+    <button id="manage">Manage snippets</button>
+  </footer>
+
+  <script src="shim.js"></script>
+  <script src="../../src/popup/popup.js"></script>
+</body>
+</html>
