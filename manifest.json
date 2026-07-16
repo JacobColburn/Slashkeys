@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "SlashKeys — Text Expander",
   "version": "0.1.0",
-  "description": "Type \\shortcut and watch it expand into full text. Free, private text expansion — snippets stay on your device. The ShortKeys replacement.",
+  "description": "Type \\shortcut, get your full text. Free, private text expansion — no account, no cloud. The ShortKeys replacement.",
   "permissions": ["storage", "activeTab"],
   "optional_permissions": ["clipboardRead"],
   "host_permissions": ["https://extensionpay.com/*"],
