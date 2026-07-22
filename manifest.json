@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SlashKeys — Text Expander",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type \\shortcut, get your full text. Free, private text expansion — no account, no cloud. The ShortKeys replacement.",
   "permissions": ["storage", "activeTab"],
   "optional_permissions": ["clipboardRead"],
@@ -14,7 +14,8 @@
       "matches": ["<all_urls>"],
       "js": ["src/expander.js", "src/content.js"],
       "run_at": "document_idle",
-      "all_frames": true
+      "all_frames": true,
+      "match_origin_as_fallback": true
     },
     {
       "matches": ["https://extensionpay.com/*"],

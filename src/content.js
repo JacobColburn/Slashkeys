@@ -38,7 +38,8 @@
     return null;
   }
 
-  document.addEventListener('input', onInput, true);
+  // window-capture fires before any page listener on document can stop the event
+  window.addEventListener('input', onInput, true);
 
   function onInput(e) {
     if (expanding) return;
