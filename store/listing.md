@@ -3,8 +3,8 @@
 ## Name
 SlashKeys — Text Expander
 
-## Summary (132 chars max)
-Type \shortcut, get full text. Free, private text expansion — no account, snippets never leave your device. ShortKeys replacement.
+## Summary (132 chars max — mirrors manifest description)
+Type \shortcut, get your full text. Free, private text expansion — no account. Replaces the retired ShortKeys Windows app.
 
 ## Description
 
@@ -37,7 +37,12 @@ HOW IT WORKS
 2. In any text field, type \greeting — it expands instantly, right where you typed it.
 3. That's it. Toggle it off per-site or globally from the popup.
 
-Known limitation: Google Docs uses a canvas editor and is not yet supported.
+Known limitations: Google Docs (canvas-based editor) is not yet supported, and browser UI
+such as the address bar or the new-tab search box is off-limits to ALL extensions by design —
+SlashKeys works on any page that has a URL.
+
+SlashKeys is an independent product, not affiliated with Insight Software Solutions
+(makers of ShortKeys for Windows) or the Shortkeys browser extension.
 
 ## Category
 Productivity › Workflow & Planning

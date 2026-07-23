@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SlashKeys — Text Expander",
-  "version": "0.1.1",
-  "description": "Type \\shortcut, get your full text. Free, private text expansion — no account, no cloud. The ShortKeys replacement.",
+  "version": "0.1.2",
+  "description": "Type \\shortcut, get your full text. Free, private text expansion — no account. Replaces the retired ShortKeys Windows app.",
   "permissions": ["storage", "activeTab"],
   "optional_permissions": ["clipboardRead"],
   "host_permissions": ["https://extensionpay.com/*"],

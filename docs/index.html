@@ -113,8 +113,8 @@
     <div class="hero-left">
       <div class="brand"><div class="mark">\</div><span>SlashKeys</span></div>
       <h1>Type <em>\shortcut</em>.<br>Get your full text.</h1>
-      <p class="sub">A free, private text expander for your browser — the successor to the
-        retired <b>ShortKeys</b> app. Your snippets never leave your device.</p>
+      <p class="sub">A free, private text expander for your browser — a replacement for the
+        retired <b>ShortKeys</b> Windows app. Your snippets never leave your device.</p>
       <div class="ctas">
         <a class="cta chrome" href="https://chromewebstore.google.com/detail/slashkeys-%E2%80%94-text-expander/ehenddhjfehdlphhgoibgibfcamnjkbb">Add to Chrome</a>
         <a class="cta edge" href="https://microsoftedge.microsoft.com/addons/detail/impfdopgfkjlicaiphfcaaiamfhcbfee">Add to Edge</a>
@@ -142,10 +142,11 @@
 
   <h2>Switching from ShortKeys?</h2>
   <div class="migrate">
-    <b>ShortKeys has been retired</b> — its website is gone and there will be no more updates.
-    SlashKeys was built as its successor for the browser: the same <code>\trigger</code> workflow,
-    rebuilt on modern extension APIs. Export your old macros as tab-delimited text and import them
-    in one click (Pro) — every trigger and replacement comes with you.
+    <b>The ShortKeys Windows app (by Insight Software) has been retired</b> — its website is gone
+    and there have been no updates since 2017. SlashKeys brings the same <code>\trigger</code>
+    workflow to the browser, rebuilt on modern extension APIs. Export your old macros as
+    tab-delimited text and import them in one click (Pro) — every trigger and replacement comes
+    with you.
   </div>
 
   <h2>FAQ</h2>
@@ -154,6 +155,10 @@
     <dd>Yes — 20 snippets with every expansion feature, forever. Pro is a <b>one-time</b> purchase (not a subscription) that unlocks unlimited snippets, dynamic placeholders like <code>{date}</code> and <code>{cursor}</code>, import/export, and four extra themes.</dd>
     <dt>Where is my data stored?</dt>
     <dd>In your browser's local extension storage, on your machine. Read the <a href="privacy">privacy policy</a> — the short version: we never see anything.</dd>
+    <dt>Why doesn't it expand in the address bar or the new-tab search box?</dt>
+    <dd>Those are part of the browser itself, not a web page — and browsers seal that UI off from
+      <i>all</i> extensions for security (imagine an extension that could read everything you type
+      in the address bar). Rule of thumb: if the page has a URL, SlashKeys works there.</dd>
     <dt>Does it work outside the browser?</dt>
     <dd>No — SlashKeys expands text on web pages only. That's the deal: browser-deep, privacy-first.</dd>
     <dt>Google Docs?</dt>
@@ -161,7 +166,9 @@
   </dl>
 
   <footer>
-    <span>SlashKeys · made by an IT tech who got tired of retyping</span>
+    <span>SlashKeys · made by an IT tech who got tired of retyping<br>
+      <small>An independent product — not affiliated with Insight Software Solutions (ShortKeys for Windows)
+      or the Shortkeys browser extension.</small></span>
     <span><a href="privacy">Privacy</a> · <a href="https://github.com/JacobColburn/Slashkeys">GitHub</a></span>
   </footer>
 </main>
